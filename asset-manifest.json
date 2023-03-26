@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/roc8_challange_e_comm/static/css/main.04c09e24.css",
+    "main.js": "/roc8_challange_e_comm/static/js/main.a4188a3d.js",
+    "static/js/787.3ddf1f1c.chunk.js": "/roc8_challange_e_comm/static/js/787.3ddf1f1c.chunk.js",
+    "index.html": "/roc8_challange_e_comm/index.html",
+    "main.04c09e24.css.map": "/roc8_challange_e_comm/static/css/main.04c09e24.css.map",
+    "main.a4188a3d.js.map": "/roc8_challange_e_comm/static/js/main.a4188a3d.js.map",
+    "787.3ddf1f1c.chunk.js.map": "/roc8_challange_e_comm/static/js/787.3ddf1f1c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.04c09e24.css",
+    "static/js/main.a4188a3d.js"
+  ]
+}
