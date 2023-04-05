@@ -6,7 +6,7 @@ import { AiFillStar } from "react-icons/ai";
 
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../components/util/Loader";
-import { addToCart } from "../store/action/cartAction";
+import { addToCart } from "../store/reducer/cartReducer";
 
 import { useParams } from "react-router-dom";
 
@@ -37,7 +37,7 @@ function Product() {
 
   const add_to_cart = () => {
     let AllReadyInCart = CartProduct.length
-      ? CartProduct.filter((e) => e.id == productId)
+      ? CartProduct.filter((e) => e.id === Number(productId))
       : [];
     if (AllReadyInCart.length) {
       msg(" Item Present In Cart");
@@ -46,6 +46,7 @@ function Product() {
 
     if (!product) return;
 
+    product.quantity = 1;
     dispatch(addToCart(product));
 
     msg("Added to Cart");

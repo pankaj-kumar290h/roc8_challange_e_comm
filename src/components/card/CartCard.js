@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { AiFillStar, AiTwotoneDelete } from "react-icons/ai";
-import { removeFromCart } from "../../store/action/cartAction";
+import {
+  addQuantity,
+  removeFromCart,
+  subtractQuantity,
+} from "../../store/reducer/cartReducer";
 import { toast } from "react-toastify";
 
 const CartCard = ({ product }) => {
-  const [quntity, setQuntity] = useState(1);
+  console.log(product);
+  const [quantity, setQuantity] = useState(product.quantity);
 
   const dispatch = useDispatch();
 
@@ -26,11 +31,14 @@ const CartCard = ({ product }) => {
     dispatch(removeFromCart(product.id));
     msg();
   };
+  const handleAddQuntity = () => {
+    dispatch(addQuantity(product.id));
+  };
   const handleReduceQuantity = () => {
-    if (quntity <= 1) {
+    if (quantity <= 1) {
       removeItem();
     } else {
-      setQuntity(quntity - 1);
+      dispatch(subtractQuantity(product.id));
     }
   };
 
@@ -57,8 +65,8 @@ const CartCard = ({ product }) => {
         <div className="price_section">
           <h2 id="price">${product.price}</h2>
           <div className="quantity_counter">
-            <button onClick={() => setQuntity(quntity + 1)}>+</button>
-            <span>{quntity}</span>
+            <button onClick={handleAddQuntity}>+</button>
+            <span>{quantity}</span>
             <button onClick={handleReduceQuantity}>-</button>
           </div>
         </div>
